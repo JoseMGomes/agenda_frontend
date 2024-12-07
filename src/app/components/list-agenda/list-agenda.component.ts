@@ -27,4 +27,5 @@ export class ListAgendaComponent implements OnInit {
       next: ()=> this.loadAgenda(),
     })
   }
+
 }

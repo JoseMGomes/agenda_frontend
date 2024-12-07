@@ -1,1 +1,37 @@
-<p>form-list works!</p>
+<div class="container mt-3">
+  <h1>Cadastro de Produto</h1>
+  <form [formGroup]="formGroupAgenda">
+    <div class="mb-3">
+      <label for="description" class="form-label">Compromisso:</label>
+      <input
+        formControlName="description"
+        type="text"
+        class="form-control"
+        id="description"
+        placeholder="Digite o compromisso"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="duration" class="form-label">Duração:</label>
+      <input
+        formControlName="duration"
+        type="text"
+        class="form-control"
+        id="duration"
+        placeholder="Digite a duração do compromisso"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="local" class="form-label">Local:</label>
+      <input
+      formControlName="local"
+        type="text"
+        class="form-control"
+        id="local"
+        placeholder="Digite o local"
+      />
+    </div>
+    <button *ngIf="Editing"  type="button" class="btn btn-primary" (click)="update()">Salvar</button>
+    <button *ngIf="Creating"  type="button" class="btn btn-primary" (click)="save()">Criar</button>
+  </form>
+</div>

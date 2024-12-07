@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Agenda } from './Agenda';
+import { Agenda } from '../Agenda';
 
 
 @Injectable({
@@ -10,9 +10,13 @@ import { Agenda } from './Agenda';
 export class AgendaService {
   url = 'http://localhost:8080/agendas';
 
-  constructor(private _httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getAgenda(): Observable<Agenda[]> {
-    return this._httpClient.get<Agenda[]>(this.url);
+    return this.http.get<Agenda[]>(this.url);
+  }
+
+  delete(agenda: Agenda): Observable<void>{
+    return this.http.delete<void>(`${this.url}/${agenda.id}`);
   }
 }

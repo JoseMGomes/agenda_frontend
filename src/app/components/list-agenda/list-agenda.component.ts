@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Agenda } from '../../Agenda';
-import { AgendaService } from '../../agenda.service';
+import { AgendaService } from '../../services/agenda.service';
 
 @Component({
   selector: 'app-list-agenda',
@@ -16,15 +16,15 @@ export class ListAgendaComponent implements OnInit {
       this.loadAgenda();
   }
 
-  loadAgenda(): void {
-    this.service.getAgenda().subscribe(
-      (data: Agenda[]) => {
-        console.log('Dados carregados:', data);
-        this.agendas = data;
-      },
-      (error) => {
-        console.error('Erro ao buscar dados:', error);
-      }
-    );
+  loadAgenda(){
+    this.service.getAgenda().subscribe({
+      next: (data)=> (this.agendas = data),
+    })
+  }
+
+  delete(agenda: Agenda){
+    this.service.delete(agenda).subscribe({
+      next: ()=> this.loadAgenda(),
+    })
   }
 }

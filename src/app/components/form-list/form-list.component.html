@@ -12,13 +12,13 @@
       />
     </div>
     <div class="mb-3">
-      <label for="duration" class="form-label">Duração:</label>
+      <label for="duration" class="form-label">Data:</label>
       <input
         formControlName="duration"
         type="text"
         class="form-control"
         id="duration"
-        placeholder="Digite a duração do compromisso"
+        placeholder="Digite a data do compromisso"
       />
     </div>
     <div class="mb-3">
@@ -33,5 +33,6 @@
     </div>
     <button *ngIf="Editing"  type="button" class="btn btn-primary" (click)="update()">Salvar</button>
     <button *ngIf="Creating"  type="button" class="btn btn-primary" (click)="save()">Criar</button>
+    <button routerLink="/agendas" type="button" class="btn btn-danger ms-3" >Cancelar</button>
   </form>
 </div>

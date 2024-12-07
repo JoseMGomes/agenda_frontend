@@ -10,6 +10,7 @@ import { ListAgendaComponent } from './components/list-agenda/list-agenda.compon
 import { FormListComponent } from './components/form-list/form-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     ListAgendaComponent,
     FormListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AgendaService {
-  url = 'http://localhost:8080/agendas';
+  url = 'https://api.agendafatec.duckdns.org/agendas';
 
   constructor(private http: HttpClient) {}
 

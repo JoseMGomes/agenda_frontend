@@ -24,15 +24,31 @@
     <div class="mb-3">
       <label for="local" class="form-label">Local:</label>
       <input
-      formControlName="local"
+        formControlName="local"
         type="text"
         class="form-control"
         id="local"
         placeholder="Digite o local"
       />
     </div>
-    <button *ngIf="Editing"  type="button" class="btn btn-primary" (click)="update()">Salvar</button>
-    <button *ngIf="Creating"  type="button" class="btn btn-primary" (click)="save()">Criar</button>
-    <button routerLink="/agendas" type="button" class="btn btn-danger ms-3" >Cancelar</button>
+    <button
+      *ngIf="Editing"
+      type="button"
+      class="btn btn-primary"
+      (click)="update()"
+    >
+      Salvar
+    </button>
+    <button
+      *ngIf="Creating"
+      type="button"
+      class="btn btn-primary"
+      (click)="save()"
+    >
+      Criar
+    </button>
+    <button routerLink="/agendas" type="button" class="btn btn-danger ms-3">
+      Cancelar
+    </button>
   </form>
 </div>

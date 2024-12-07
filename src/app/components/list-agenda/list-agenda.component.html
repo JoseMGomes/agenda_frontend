@@ -13,17 +13,26 @@
     <tbody>
       <tr *ngFor="let agenda of agendas">
         <td>{{ agenda.id }}</td>
-        <td [routerLink]="['/agenda', agenda.id]">{{ agenda.description}}</td>
+        <td [routerLink]="['/agenda', agenda.id]">{{ agenda.description }}</td>
         <td [routerLink]="['/agenda', agenda.id]">{{ agenda.duration }}</td>
         <td [routerLink]="['/agenda', agenda.id]">{{ agenda.local }}</td>
         <td>
-          <button class="btn btn-primary me-2" [routerLink]="['/agenda', agenda.id]">Editar</button>
-          <button class="btn btn-danger" (click)="delete(agenda)">Excluir</button>
+          <button
+            class="btn btn-primary me-2"
+            [routerLink]="['/agenda', agenda.id]"
+          >
+            Editar
+          </button>
+          <button class="btn btn-danger" (click)="delete(agenda)">
+            Excluir
+          </button>
         </td>
       </tr>
       <tr>
         <td colspan="7">
-          <button class="btn btn-primary mt-2" [routerLink]="['/agenda']">Adicionar Compromisso</button>
+          <button class="btn btn-primary mt-2" [routerLink]="['/agenda']">
+            Adicionar Compromisso
+          </button>
         </td>
       </tr>
     </tbody>
